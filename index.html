@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Ranoosh 🌷</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background: linear-gradient(to bottom, #ffe4ec, #fff);
+      overflow-x: hidden;
+    }
+
+    .tulip {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: pink;
+      border-radius: 50% 50% 0 0;
+      transform: rotate(45deg);
+      animation: float 10s linear infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+      20% { opacity: 1; }
+      100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+    }
+  </style>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen text-center px-6">
+
+  <!-- Music -->
+  <iframe style="display:none" src="https://www.youtube.com/embed/BO1n7gY4wC4?autoplay=1&loop=1&playlist=BO1n7gY4wC4"></iframe>
+
+  <h1 class="text-4xl md:text-6xl font-bold text-pink-600 mb-6">Hey Ranoosh 🌷</h1>
+
+  <p class="text-lg md:text-2xl text-gray-700 max-w-xl leading-relaxed">
+    I just want you to know something important...<br/><br/>
+    You are doing better than you think.<br/>
+    Even on the days you feel tired, lost, or unsure...<br/>
+    you're still moving forward.<br/><br/>
+    And that? That takes strength.
+  </p>
+
+  <button onclick="showMessage()" class="mt-8 bg-pink-500 hover:bg-pink-600 text-white px-6 py-3 rounded-2xl shadow-lg transition">
+    Click me 💌
+  </button>
+
+  <div id="hiddenMessage" class="hidden mt-8 text-xl text-pink-700 max-w-lg">
+    I'm really proud of you, Ranoosh.<br/><br/>
+    You handle so much, and you still keep going.
+    You are strong in ways you don't even realize yet.<br/><br/>
+    And honestly...
+    I would risk it all for you ❤️
+  </div>
+
+  <script>
+    function showMessage() {
+      document.getElementById('hiddenMessage').classList.remove('hidden');
+    }
+
+    function createTulip() {
+      const tulip = document.createElement('div');
+      tulip.classList.add('tulip');
+      tulip.style.left = Math.random() * 100 + 'vw';
+      tulip.style.animationDuration = (5 + Math.random() * 5) + 's';
+      document.body.appendChild(tulip);
+
+      setTimeout(() => {
+        tulip.remove();
+      }, 10000);
+    }
+
+    setInterval(createTulip, 300);
+  </script>
+
+</body>
+</html>
